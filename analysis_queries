@@ -1,0 +1,16 @@
+-- Highest rated movies
+SELECT m.title, AVG(r.rating)
+FROM Movies m
+JOIN Ratings r
+ON m.movie_id = r.movie_id
+GROUP BY m.title;
+
+-- Movies by genre
+SELECT genre, COUNT(*)
+FROM Movies
+GROUP BY genre;
+
+-- Most active users
+SELECT user_id, COUNT(*)
+FROM Ratings
+GROUP BY user_id;
